@@ -1,5 +1,6 @@
-# My vim files
+# My Vim files
 
+For Vim & Neovim
 Plugins managed by [vim-plug].
 
 <br>

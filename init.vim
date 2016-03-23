@@ -17,7 +17,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 
-" Tasks
+" Helpers 
 Plug 'AndrewRadev/splitjoin.vim'
 
 " Language specific
