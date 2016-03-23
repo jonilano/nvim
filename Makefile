@@ -1,4 +1,4 @@
-lockfile := ./bin/restore
+lockfile := ./snapshot/restore
 vim := nvim
 pwd := $(shell pwd -LP)
 
