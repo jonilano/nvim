@@ -13,14 +13,17 @@ Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Utils
+" Tools
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 
-" Helpers 
+" Helpers
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'rstacruz/vim-closer'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 
 " Language specific
+Plug 'dag/vim-fish'
 Plug 'pangloss/vim-javascript'
 call plug#end()
-
