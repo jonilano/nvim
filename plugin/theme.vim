@@ -19,8 +19,7 @@ endif
 "
 
 if has("gui_running")
-"  colorscheme gotham
-  colorscheme iceberg
+  colorscheme gotham
   set cursorline
   set guifont=Meslo\ LG\ M\ for\ Powerline
 endif
