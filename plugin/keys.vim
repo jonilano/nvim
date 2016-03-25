@@ -1,4 +1,10 @@
 "
+" Map that <ESC> key
+"
+
+imap jk <ESC>
+vmap jk <ESC> 
+"
 " Buffer navigation
 "
 
@@ -12,4 +18,3 @@ imap <C-L> <ESC>:bnext<CR>
 "
 
 nnoremap <Space> za
-
