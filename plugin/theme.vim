@@ -10,7 +10,7 @@ let g:airline_theme='base16'
 if !has("gui_running")
   set t_Co=256
   set background=dark
-  colorscheme iceberg 
+  colorscheme iceberg
   set cursorline
 endif
 
@@ -22,5 +22,5 @@ if has("gui_running")
   colorscheme gotham
   set cursorline
   set guifont=Meslo\ LG\ M\ for\ Powerline
+  set lines=31 columns=130
 endif
-
