@@ -18,6 +18,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 
 " Helpers
+if version >= 704
+  Plug 'SirVer/ultisnips'
+endif
+
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-commentary'
