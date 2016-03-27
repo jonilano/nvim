@@ -2,9 +2,9 @@
 " Map that <ESC> key
 "
 
-inoremap jk <ESC>
-onoremap jk <ESC>
-vnoremap jk <ESC>
+" inoremap jk <ESC>
+" onoremap jk <ESC>
+" vnoremap jk <ESC>
 
 "
 " Buffer navigation

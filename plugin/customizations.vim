@@ -33,3 +33,14 @@ if has("user_commands")
   command! -bang QA qa<bang>
   command! -bang Qa qa<bang>
 endif
+
+"
+" Opinion extensions
+"
+
+set tabstop=2
+set foldnestmax=3        " don't overfold
+set fillchars=fold:·     " improve appearance of folds
+set list
+set listchars=tab:·\ ,trail:—,nbsp:␣,extends:>,precedes:<
+set showbreak=↪
