@@ -26,8 +26,9 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
 
 " Language specific
 Plug 'dag/vim-fish'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 call plug#end()
