@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Tools
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 
@@ -24,11 +25,13 @@ endif
 
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'rstacruz/vim-closer'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 
 " Language specific
 Plug 'dag/vim-fish'
+Plug 'mitsuhiko/vim-python-combined'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 call plug#end()
