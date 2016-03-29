@@ -30,6 +30,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 
+Plug 'benekastah/neomake'
+
 " Language specific
 Plug 'dag/vim-fish'
 Plug 'mitsuhiko/vim-python-combined'
