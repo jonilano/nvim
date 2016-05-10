@@ -4,7 +4,6 @@
 
 inoremap jk <ESC>
 onoremap jk <ESC>
-vnoremap jk <ESC>
 
 "
 " Buffer navigation
