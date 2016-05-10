@@ -28,7 +28,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
-
+Plug 'godlygeek/tabular'
 Plug 'benekastah/neomake'
 
 " Language specific
