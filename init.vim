@@ -29,10 +29,15 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
-Plug 'benekastah/neomake'
+
+if !has('nvim')
+  Plug 'scrooloose/syntastic'
+else
+  Plug 'benekastah/neomake'
+endif
 
 " Language specific
-Plug 'dag/vim-fish'
 Plug 'mitsuhiko/vim-python-combined'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx'
 call plug#end()

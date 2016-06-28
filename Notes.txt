@@ -1,0 +1,50 @@
+------------------------------------------------------------------------------
+*scrooloose/nerdtree*
+
+   |,N|   open tree
+
+   |o|    open
+   |i|    open in split
+   |t|    open in tab
+   |T|    open in tab, silently
+
+------------------------------------------------------------------------------
+*splitjoin*
+Multiple lines into single lines (and vice versa).
+
+   |gS|  expand to multiple lines
+   |gJ|  collapse
+
+Example:
+>
+    <div>xxx</div>
+
+    <div>
+      xxx
+    </div>
+
+------------------------------------------------------------------------------
+
+*tpope/vim-commentary*
+
+   {visual}/     comment
+   {visual}gc    comment
+
+   gc{motion}    comment
+     gcap
+
+------------------------------------------------------------------------------
+
+*tpope/vim-surround*
+
+   |cs"'|         "hello" --> 'hello'
+   |cs'<q>|       'hello' --> <q>hello</q>
+   |ysiw]|        [hello] world! *iw - inside word*
+------------------------------------------------------------------------------
+
+*neomake*
+
+    :ll       # view location list
+    [l ]l     # jump to prev/next location (via unimpaired)
+
+------------------------------------------------------------------------------

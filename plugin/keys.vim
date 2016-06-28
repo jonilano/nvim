@@ -1,5 +1,5 @@
 "
-" Map that <ESC> key
+" Custom key-bindings 
 "
 
 inoremap jk <ESC>
