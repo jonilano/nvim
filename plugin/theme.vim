@@ -11,7 +11,7 @@ let g:airline_theme='base16'
 
 if !has("gui_running")
   set t_Co=256
-  colorscheme gotham256
+  colorscheme molokai
   set background=dark
   set cursorline
 endif
