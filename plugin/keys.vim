@@ -2,8 +2,16 @@
 " Custom key-bindings 
 "
 
+" inoremap <esc> <nop>
 inoremap jk <ESC>
 onoremap jk <ESC>
+
+"
+" Moving around
+"
+
+nnoremap H ^
+nnoremap L $
 
 "
 " Buffer navigation
@@ -13,6 +21,7 @@ nmap <C-h> :bprev<CR>
 nmap <C-l> :bnext<CR>
 imap <C-h> <ESC>:bprev<CR>
 imap <C-l> <ESC>:bnext<CR>
+
 
 "
 " Pane navigation
@@ -28,3 +37,4 @@ imap <C-l> <ESC>:bnext<CR>
 "
 
 nnoremap <Space> za
+

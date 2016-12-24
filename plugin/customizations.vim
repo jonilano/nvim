@@ -1,8 +1,21 @@
 scriptencoding utf-8
+
 "
 " Use OS Clipboard
+" This requires xclip or xsel to work
+" see :help clipboard
 "
 set clipboard=unnamedplus
+
+"
+" Allow ^v in the console
+"
+
+if !has("gui_running")
+  vmap <C-c> "+y
+  vmap <C-v> "+p
+  imap <C-v> <Esc>"+pi
+endif
 
 " Remove the one-second escape key delay
 " http://stackoverflow.com/questions/12312178/tmux-and-vim-escape-key-being-seen-as-and-having-long-delay
