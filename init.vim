@@ -8,9 +8,10 @@ Plug 'tpope/vim-sensible'
 Plug 'rstacruz/vim-opinion'
 
 " Themes
-Plug 'flazz/vim-colorschemes'
+" Plug 'flazz/vim-colorschemes'
+Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 
 " Tools
 Plug 'ctrlpvim/ctrlp.vim'
