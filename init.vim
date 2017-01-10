@@ -1,44 +1,29 @@
 set nocompatible
-let g:mapleader=","
 syntax on
-filetype plugin indent on
+filetype indent plugin on
 
+" Load vim plugins
+" Managed by vim-plug
 call plug#begin('~/.vim/vendor')
+
 Plug 'tpope/vim-sensible'
 Plug 'rstacruz/vim-opinion'
-
-" Themes
-" Plug 'flazz/vim-colorschemes'
-Plug 'joshdick/onedark.vim'
-Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-
-" Tools
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
+Plug 'ap/vim-buftabline'
 
-" Helpers
 if version >= 704
   Plug 'SirVer/ultisnips'
 endif
 
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'rstacruz/vim-closer'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
+Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-surround'
-Plug 'godlygeek/tabular'
+Plug 'scrooloose/syntastic'
 
-if !has('nvim')
-  Plug 'scrooloose/syntastic'
-else
-  Plug 'benekastah/neomake'
-endif
-
-" Language specific
-Plug 'mitsuhiko/vim-python-combined'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx'
+" Themes
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
+

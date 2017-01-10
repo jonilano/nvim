@@ -1,40 +1,30 @@
 "
-" Custom key-bindings 
+" Custom key-bindings
 "
 
-" inoremap <esc> <nop>
-inoremap jk <ESC>
-onoremap jk <ESC>
+let mapleader=","
+let g:mapleader=","
 
-"
-" Moving around
-"
+inoremap jk <Esc>
+onoremap jk <Esc>
 
+" Move to start and end of line
 nnoremap H ^
+vnoremap H ^
 nnoremap L $
+vnoremap L $
 
-"
 " Buffer navigation
-"
+nnoremap <C-h> :bprev<CR>
+inoremap <C-h> <Esc>:bprev<CR>
+nnoremap <C-l> :bnext<CR>
+inoremap <C-l> <Esc>:bnext<CR>
 
-nmap <C-h> :bprev<CR>
-nmap <C-l> :bnext<CR>
-imap <C-h> <ESC>:bprev<CR>
-imap <C-l> <ESC>:bnext<CR>
-
-
-"
-" Pane navigation
-"
-
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-l> <C-w>l
-
-"
 " Code folding
-"
-
 nnoremap <Space> za
 
+nnoremap <Leader>l :nohlsearch<cr>
+
+" :W sudo saves the file 
+" (useful for handling the permission-denied error)
+command! W w !sudo tee % > /dev/null
