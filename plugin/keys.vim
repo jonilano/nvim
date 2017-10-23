@@ -31,6 +31,11 @@ noremap <Leader>J <C-w>J
 noremap <Leader>K <C-w>K
 noremap <Leader>L <C-w>L
 
+" FZF
+nmap ; :Buffers<CR>
+nmap <Leader>r :Tags<CR>
+nmap <Leader>t :Files<CR>
+
 " Code folding
 nnoremap <Space> za
 

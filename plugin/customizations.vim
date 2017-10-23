@@ -1,10 +1,17 @@
 set encoding=utf-8
 set number
 set norelativenumber
-set nocursorline
+" set nocursorline
+set cursorline
 
 " Use OS Clipboard
-set clipboard=unnamedplus
+" http://www.markcampbell.me/2016/04/12/setting-up-yank-to-clipboard-on-a-mac-with-vim.html
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
+    if has("unnamedplus") " X11 support
+        set clipboard+=unnamedplus
+    endif
+endif
 
 " Allow ^v in the console
 if !has("gui_running")
@@ -40,10 +47,10 @@ set statusline+=%< " where to truncate if too long
 set statusline+=%F " fullpath
 set statusline+=%h%m%r " flags
 
-" syntastic statusline stuff
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" " syntastic statusline stuff
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 set statusline+=%= " separation point between left and right items
 set statusline+=\ %{&filetype}
