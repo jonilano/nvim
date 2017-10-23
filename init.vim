@@ -23,6 +23,7 @@ Plug 'tpope/vim-endwise'
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
+Plug 'godlygeek/tabular'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
