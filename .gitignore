@@ -8,3 +8,4 @@ foo.*
 data
 .netrwhist
 .DS_Store
+lazy-lock.json
