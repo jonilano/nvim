@@ -1,3 +1,5 @@
+local Lsp = require "utils.lsp"
+
 return {
   "stevearc/conform.nvim",
   event = { "BufWritePre" },
@@ -9,8 +11,15 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       rust = { "rustfmt" },
-      javascript = { "prettierd", "prettier", stop_after_first = true },
-      typescript = { "prettierd", "prettier", stop_after_first = true },
+      javascript = { "deno_fmt", "prettierd", "prettier", stop_after_first = true },
+      typescript = { "deno_fmt", "prettierd", "prettier", stop_after_first = true },
+    },
+    formatters = {
+      deno_fmt = {
+        condition = function()
+          return Lsp.deno_config_exist()
+        end,
+      },
     },
     default_format_opts = {
       lsp_format = "fallback",

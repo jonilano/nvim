@@ -1,3 +1,5 @@
+local Path = require "utils.path"
+
 local M = {}
 
 -- Get default LSP keymaps without any plugin dependencies
@@ -66,5 +68,34 @@ M.action = setmetatable({}, {
     end
   end,
 })
+
+-- Utils for conform
+--- Get the path of the config file in the current directory or the root of the git repo
+---@param filename string
+---@return string | nil
+local function get_config_path(filename)
+  local current_dir = vim.fn.getcwd()
+  local config_file = current_dir .. "/" .. filename
+  if vim.fn.filereadable(config_file) == 1 then
+    return current_dir
+  end
+
+  -- If the current directory is a git repo, check if the root of the repo
+  -- contains a biome.json file
+  local git_root = Path.get_git_root()
+  if Path.is_git_repo() and git_root ~= current_dir then
+    config_file = git_root .. "/" .. filename
+    if vim.fn.filereadable(config_file) == 1 then
+      return git_root
+    end
+  end
+
+  return nil
+end
+
+M.deno_config_exist = function()
+  local has_config = get_config_path "deno.json" or get_config_path "deno.jsonc"
+  return has_config ~= nil
+end
 
 return M

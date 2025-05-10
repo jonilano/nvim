@@ -1,14 +1,6 @@
--- return {
---   cmd = { "typescript-language-server", "--stdio" },
---   filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
---   root_markers = { "package.json", "tsconfig.json", ".git" },
--- }
-
 local Lsp = require "utils.lsp"
--- NOTE: npm install -g typescript typescript-language-server
-return {
-  on_attach = Lsp.on_attach,
-  init_options = { hostInfo = "neovim" },
+
+return vim.lsp.config("tsserver", {
   cmd = { "typescript-language-server", "--stdio" },
   filetypes = {
     "javascript",
@@ -18,13 +10,27 @@ return {
     "typescriptreact",
     "typescript.tsx",
   },
-  root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
+  init_options = { hostInfo = "neovim" },
+  on_attach = Lsp.on_attach,
+  root_dir = function(bufnr, on_dir)
+    -- Only enable tsserver if it's *not* a Deno project
+    local deno_root = vim.fs.root(bufnr, { "deno.json", "deno.jsonc" })
+    if not deno_root then
+      local root = vim.fs.root(bufnr, {
+        "tsconfig.json",
+        "jsconfig.json",
+        "package.json",
+        ".git",
+      })
+      if root then
+        on_dir(root)
+      end
+    end
+  end,
   settings = {
     typescript = {
-      -- Inlay Hints preferences
       inlayHints = {
-        -- You can set this to 'all' or 'literals' to enable more hints
-        includeInlayParameterNameHints = "literals", -- 'none' | 'literals' | 'all'
+        includeInlayParameterNameHints = "literals",
         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
         includeInlayFunctionParameterTypeHints = false,
         includeInlayVariableTypeHints = false,
@@ -33,14 +39,8 @@ return {
         includeInlayFunctionLikeReturnTypeHints = true,
         includeInlayEnumMemberValueHints = true,
       },
-      -- Code Lens preferences
-      implementationsCodeLens = {
-        enabled = true,
-      },
-      referencesCodeLens = {
-        enabled = true,
-        showOnAllFunctions = true,
-      },
+      implementationsCodeLens = { enabled = true },
+      referencesCodeLens = { enabled = true, showOnAllFunctions = true },
       format = {
         indentSize = vim.o.shiftwidth,
         convertTabsToSpaces = vim.o.expandtab,
@@ -48,11 +48,9 @@ return {
       },
     },
     javascript = {
-      -- Inlay Hints preferences
       inlayHints = {
-        -- You can set this to 'all' or 'literals' to enable more hints
+        includeInlayParameterNameHints = "all",
         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all'
         includeInlayVariableTypeHints = true,
         includeInlayFunctionParameterTypeHints = true,
         includeInlayVariableTypeHintsWhenTypeMatchesName = true,
@@ -60,14 +58,8 @@ return {
         includeInlayFunctionLikeReturnTypeHints = true,
         includeInlayEnumMemberValueHints = true,
       },
-      -- Code Lens preferences
-      implementationsCodeLens = {
-        enabled = true,
-      },
-      referencesCodeLens = {
-        enabled = true,
-        showOnAllFunctions = true,
-      },
+      implementationsCodeLens = { enabled = true },
+      referencesCodeLens = { enabled = true, showOnAllFunctions = true },
       format = {
         indentSize = vim.o.shiftwidth,
         convertTabsToSpaces = vim.o.expandtab,
@@ -78,4 +70,4 @@ return {
       completeFunctionCalls = true,
     },
   },
-}
+})
