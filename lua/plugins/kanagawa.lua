@@ -9,7 +9,4 @@ return {
       light = "lotus",
     },
   },
-  config = function()
-    vim.cmd.colorscheme "kanagawa"
-  end,
 }

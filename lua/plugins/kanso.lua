@@ -9,7 +9,4 @@ return {
       light = "pearl",
     },
   },
-  -- config = function()
-  --     vim.cmd.colorscheme("kanso")
-  -- end,
 }
