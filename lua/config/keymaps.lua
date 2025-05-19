@@ -3,8 +3,9 @@ vim.g.maplocalleader = "\\"
 
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
-vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert with jk" })
-vim.keymap.set("v", "<leader>jk", "<ESC>", { desc = "Exit visual" })
+-- breaking the habit
+-- vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert with jk" })
+-- vim.keymap.set("v", "<leader>jk", "<ESC>", { desc = "Exit visual" })
 
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })

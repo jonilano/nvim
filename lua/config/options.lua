@@ -22,9 +22,6 @@ opt.inccommand = "split"
 opt.termguicolors = true
 opt.showmode = false
 
--- clipboard
--- opt.clipboard:append("unnamedplus")
-
 -- split windows
 opt.splitbelow = true
 opt.splitright = true
@@ -33,10 +30,14 @@ opt.splitright = true
 opt.scrolloff = 999
 opt.wrap = false
 
+opt.swapfile = false
+opt.backup = false
+opt.writebackup = false
 opt.undofile = true
 opt.undolevels = 10000
-opt.updatetime = 200 -- Save swap file and trigger CursorHold
-opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+opt.updatetime = 200
+
+opt.virtualedit = "block"
 
 opt.completeopt = "menu,menuone,noselect,fuzzy"
 
