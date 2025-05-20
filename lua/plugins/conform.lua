@@ -11,10 +11,23 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       rust = { "rustfmt" },
-      javascript = { "deno_fmt", "prettierd", "prettier", stop_after_first = true },
-      typescript = { "deno_fmt", "prettierd", "prettier", stop_after_first = true },
+      javascript = { "biome", "deno_fmt", "prettierd", "prettier", stop_after_first = true },
+      typescript = { "biome", "deno_fmt", "prettierd", "prettier", stop_after_first = true },
     },
     formatters = {
+      biome = {
+        condition = function()
+          local path = Lsp.biome_config_path()
+          -- Skip if biome.json is in nvim
+          local is_nvim = path and string.match(path, "nvim")
+
+          if path and not is_nvim then
+            return true
+          end
+
+          return false
+        end,
+      },
       deno_fmt = {
         condition = function()
           return Lsp.deno_config_exist()

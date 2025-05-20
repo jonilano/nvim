@@ -93,6 +93,15 @@ local function get_config_path(filename)
   return nil
 end
 
+M.biome_config_path = function()
+  return get_config_path "biome.json"
+end
+
+M.biome_config_exists = function()
+  local has_config = get_config_path "biome.json"
+  return has_config ~= nil
+end
+
 M.deno_config_exist = function()
   local has_config = get_config_path "deno.json" or get_config_path "deno.jsonc"
   return has_config ~= nil

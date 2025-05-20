@@ -1,6 +1,6 @@
 local Lsp = require "utils.lsp"
 
-return vim.lsp.config("denols", {
+return {
   cmd = { "deno", "lsp" },
   filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
   init_options = {
@@ -8,11 +8,7 @@ return vim.lsp.config("denols", {
     lint = true,
     unstable = true,
   },
+  root_markers = { "deno.json", "deno.jsonc" },
   on_attach = Lsp.on_attach,
-  root_dir = function(bufnr, on_dir)
-    local root = vim.fs.root(bufnr, { "deno.json", "deno.jsonc" })
-    if root then
-      on_dir(root)
-    end
-  end,
-})
+  workspace_required = true,
+}
