@@ -11,8 +11,8 @@ return {
     "typescript.tsx",
   },
   init_options = { hostInfo = "neovim" },
-  root_markers = { "tsconfig.json", "jsconfig.json" },
-  workspace_required = true,
+  root_markers = { "tsconfig.json", "jsconfig.json", "package.json" },
+  -- workspace_required = true,
   on_init = function(client)
     if Lsp.biome_config_exists() then
       client.stop()

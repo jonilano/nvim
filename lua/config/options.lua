@@ -28,6 +28,7 @@ opt.splitright = true
 
 -- keep cursor at least # rows from top/bot
 opt.scrolloff = 999
+-- opt.scrolloff = 8
 opt.wrap = false
 
 opt.swapfile = false
@@ -40,6 +41,22 @@ opt.updatetime = 200
 opt.virtualedit = "block"
 
 opt.completeopt = "menu,menuone,noselect,fuzzy"
+opt.statuscolumn = [[%!v:lua.require'snacks.statuscolumn'.get()]]
+
+-- Folding
+-- opt.fillchars = {
+--   foldopen = "",
+--   foldclose = "",
+--   fold = " ",
+--   foldsep = " ",
+--   diff = "╱",
+--   eob = " ",
+-- }
+opt.foldlevel = 99
+opt.smoothscroll = true
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldtext = ""
 
 -- Diagnostic settings
 local diagnostics = {
@@ -48,6 +65,7 @@ local diagnostics = {
   Hint = " ",
   Info = " ",
 }
+
 vim.diagnostic.config {
   underline = true,
   update_in_insert = false,
